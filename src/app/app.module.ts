@@ -17,7 +17,6 @@ import { EmployeeCreateComponent } from './pages/employee/employee-create/employ
 import { EmployeeUpdateComponent } from './pages/employee/employee-update/employee-update.component';
 import { ContrattoInfoComponent } from './pages/contratto/contratto-info/contratto-info.component';
 import { ContrattoCreateComponent } from './pages/contratto/contratto-create/contratto-create.component';
-import { ContrattoUpdateComponent } from './pages/contratto/contratto-update/contratto-update.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,8 @@ import { ContrattoUpdateComponent } from './pages/contratto/contratto-update/con
     EmployeeCreateComponent,
     EmployeeUpdateComponent,
     ContrattoInfoComponent,
-    ContrattoCreateComponent,
-    ContrattoUpdateComponent
+    ContrattoCreateComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -34,9 +34,7 @@ export class ContrattoInfoComponent implements OnInit {
     });
   }
 
-  modificaContratto(id: number) {
-    this.router.navigate(['/contratti/update', id]);
-  }
+
 
   
   eliminaLogico() {

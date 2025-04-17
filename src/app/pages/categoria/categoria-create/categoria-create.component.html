@@ -1,0 +1,9 @@
+<h2>Crea Categoria</h2>
+
+<form (ngSubmit)="createCategoria()">
+  <label for="tipo">Tipo:</label>
+  <input type="text" id="tipo" [(ngModel)]="tipo" name="tipo" required>
+
+  <button type="submit">Salva</button>
+  <button type="button" (click)="router.navigate(['/categorie'])">Annulla</button>
+</form>

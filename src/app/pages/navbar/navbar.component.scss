@@ -1,0 +1,31 @@
+.navbar {
+    background-color: #222;
+    padding: 10px;
+  
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        a {
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+  
+          &.active {
+            color: #4caf50;
+          }
+  
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  

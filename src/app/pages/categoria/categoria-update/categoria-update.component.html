@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Aggiorna Categoria</h2>
+  
+    <form (ngSubmit)="updateCategoria()">
+  
+      <div class="form-group">
+        <label for="tipo">Tipo Categoria:</label>
+        <input type="text" id="tipo" [(ngModel)]="tipo" name="tipo" required />
+      </div>
+  
+      <button type="submit">Aggiorna</button>
+      <button type="button" (click)="router.navigate(['/categorie'])">Annulla</button>
+    </form>
+  </div>
+  

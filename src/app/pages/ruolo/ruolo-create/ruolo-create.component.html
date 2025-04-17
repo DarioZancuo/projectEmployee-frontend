@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Create Ruolo</h2>
+  
+    <form (ngSubmit)="createRuolo()">
+  
+      <div class="form-group">
+        <label for="descrizione">Descrizione:</label>
+        <input type="text" id="descrizione" [(ngModel)]="descrizione" name="descrizione" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="stipendioMinimo">Stipendio Minimo:</label>
+        <input type="number" id="stipendioMinimo" [(ngModel)]="stipendioMinimo" name="stipendioMinimo" required>
+      </div>
+  
+      <button type="submit">Salva</button>
+      <button type="button" (click)="annulla()">Annulla</button>
+  
+    </form>
+  </div>
+  

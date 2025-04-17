@@ -1,0 +1,50 @@
+<div class="container" style="max-width: 700px; margin: 0 auto;">
+  <h2 style="text-align: center;">Dettaglio Contratto</h2>
+
+  <div *ngIf="contratto">
+    <table border="1" cellpadding="10" cellspacing="0" style="width: 100%;">
+      <tr>
+        <th>ID Contratto</th>
+        <td>{{ contratto.contrattoID }}</td>
+      </tr>
+      <tr>
+        <th>Data Assunzione</th>
+        <td>{{ contratto.dataAssunzione }}</td>
+      </tr>
+      <tr>
+        <th>Data Dimissione</th>
+        <td>{{ contratto.dataDimissione || '-' }}</td>
+      </tr>
+      <tr>
+        <th>Stipendio</th>
+        <td>{{ contratto.stipendio }} €</td>
+      </tr>
+      <tr>
+        <th>Ruolo</th>
+        <td>{{ contratto.ruoloID.descrizione }}</td>
+      </tr>
+      <tr>
+        <th>Categoria</th>
+        <td>{{ contratto.categoriaID.tipo }}</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>
+          <span [style.color]="contratto.status === 1 ? 'green' : 'red'">
+            ● {{ contratto.status === 1 ? 'Attivo' : 'Non Attivo' }}
+          </span>
+        </td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 20px; text-align: center;">
+      <button (click)="eliminaLogico()">🗑️ Disattiva</button>
+      <button (click)="annulla()">↩️ Indietro</button>
+      <button (click)="modificaContratto(contratto.contrattoID)">✏️ Aggiorna</button>
+    </div>
+  </div>
+
+  <div *ngIf="!contratto">
+    <p style="text-align: center;">Caricamento in corso...</p>
+  </div>
+</div>

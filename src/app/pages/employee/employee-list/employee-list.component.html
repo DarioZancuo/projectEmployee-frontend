@@ -1,0 +1,70 @@
+<div class="container" style="max-width: 90%; margin: 0 auto;">
+  <h2 style="text-align: center;">Lista Employees</h2>
+
+  <table border="1" cellpadding="8" cellspacing="0" style="margin: 0 auto; width: 100%;">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Hobbies</th>
+        <th>Country</th>
+        <th>Address</th>
+        <th>Ruolo</th>
+        <th>Tipologia</th>
+        <th>Contratto</th>
+        <th>Status</th>
+        <th style="text-align: center;">
+          <button (click)="creaEmployee()" style="display: flex; align-items: center; gap: 5px;">
+            <span class="material-icons">add</span> Add
+          </button>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let emp of listaEmployee">
+        <td>{{ emp.fullname }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.hobbies }}</td>
+        <td>{{ emp.country }}</td>
+        <td>{{ emp.address }}</td>
+
+        <!-- Ruolo e Tipologia -->
+        <td>{{ emp.contrattoID?.ruoloID?.descrizione || '-' }}</td>
+        <td>{{ emp.contrattoID?.categoriaID?.tipo || '-' }}</td>
+
+        <!-- Contratto -->
+        <td style="text-align: center;">
+          <button 
+            (click)="gestisciContratto(emp)" 
+            [title]="emp.contrattoID?.contrattoID  ? 'Visualizza contratto' : 'Crea contratto'">
+            <span class="material-icons">
+              {{ emp.contrattoID?.contrattoID  ? 'description' : 'add' }}
+            </span>
+          </button>
+        </td>
+
+        <!-- Status -->
+        <td style="text-align: center;">
+          <span
+            class="material-icons"
+            [style.color]="emp.contrattoID?.status === 1 ? 'green' : 'red'">
+            fiber_manual_record
+          </span>
+        </td>
+
+        <!-- Azioni -->
+        <td style="text-align: center;">
+          <button (click)="modificaEmployee(emp.id)">
+            <span class="material-icons">edit</span>
+          </button>
+          <button (click)="eliminaEmployee(emp.id)">
+            <span class="material-icons">close</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

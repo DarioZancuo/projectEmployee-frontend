@@ -1,0 +1,27 @@
+<h2>Lista Categorie</h2>
+
+<button (click)="vaiACrea()">➕ Crea Nuova Categoria</button>
+
+<table *ngIf="listaCategorie.length > 0" border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tipo</th>
+      <th>Azioni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of listaCategorie">
+      <td>{{ cat.id }}</td>
+      <td>{{ cat.tipo }}</td>
+      <td>
+        <button (click)="modificaCategoria(cat.id)">✏️ Modifica</button>
+        <button (click)="eliminaCategoria(cat.id)">❌ Elimina</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="listaCategorie.length === 0">
+  Nessuna categoria presente.
+</div>

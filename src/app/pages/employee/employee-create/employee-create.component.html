@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Nuovo Employee</h2>
+  
+    <form (ngSubmit)="salva()">
+  
+      <label>Fullname:</label>
+      <input type="text" [(ngModel)]="employee.fullname" name="fullname" required />
+  
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="employee.email" name="email" required />
+  
+      <label>Gender:</label>
+      <input type="text" [(ngModel)]="employee.gender" name="gender" required />
+  
+      <label>Hobbies:</label>
+      <input type="text" [(ngModel)]="employee.hobbies" name="hobbies" required />
+  
+      <label>Country:</label>
+      <input type="text" [(ngModel)]="employee.country" name="country" required />
+  
+      <label>Address:</label>
+      <input type="text" [(ngModel)]="employee.address" name="address" required />
+  
+      <br />
+      <button type="submit">Salva</button>
+      <button type="button" (click)="annulla()">Annulla</button>
+  
+    </form>
+  </div>
+  

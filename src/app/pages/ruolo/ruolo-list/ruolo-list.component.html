@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>List Ruolo</h2>
+  
+    <button (click)="vaiACrea()">➕ Crea Nuovo Ruolo</button>
+  
+    <div *ngIf="listaRuoli.length === 0">
+      Nessun ruolo presente.
+    </div>
+  
+    <table *ngIf="listaRuoli.length > 0" border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Descrizione</th>
+          <th>Stipendio Minimo</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ruolo of listaRuoli">
+          <td>{{ ruolo.id }}</td>
+          <td>{{ ruolo.descrizione }}</td>
+          <td>{{ ruolo.stipendioMinimo | currency:'EUR' }}</td>
+          <td>
+            <button (click)="modificaRuolo(ruolo.id)">📝 Modifica</button>
+            <button (click)="eliminaRuolo(ruolo.id)">❌ Elimina</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
